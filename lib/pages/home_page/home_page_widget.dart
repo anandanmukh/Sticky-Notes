@@ -122,7 +122,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .primary,
+                                                                .primaryText,
                                                         shape: BoxShape.circle,
                                                       ),
                                                     ),
