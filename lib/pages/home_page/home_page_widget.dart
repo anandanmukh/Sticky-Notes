@@ -1,4 +1,4 @@
-import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/components/new_note_selector_component/new_note_selector_component_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -90,90 +90,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge,
                                             ),
-                                            Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                FlutterFlowIconButton(
-                                                  borderRadius: 22.0,
-                                                  buttonSize: 44.0,
-                                                  fillColor: FlutterFlowTheme
-                                                          .of(context)
-                                                      .activateButtonBackground,
-                                                  icon: Icon(
-                                                    Icons.add,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .activateButtonText,
-                                                    size: 24.0,
-                                                  ),
-                                                  onPressed: () {
-                                                    print(
-                                                        'addNoteIconButton pressed ...');
-                                                  },
-                                                ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Container(
-                                                      width: 24.0,
-                                                      height: 24.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        shape: BoxShape.circle,
-                                                      ),
-                                                    ),
-                                                    Container(
-                                                      width: 24.0,
-                                                      height: 24.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        shape: BoxShape.circle,
-                                                      ),
-                                                    ),
-                                                    Container(
-                                                      width: 24.0,
-                                                      height: 24.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        shape: BoxShape.circle,
-                                                      ),
-                                                    ),
-                                                    Container(
-                                                      width: 24.0,
-                                                      height: 24.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        shape: BoxShape.circle,
-                                                      ),
-                                                    ),
-                                                    Container(
-                                                      width: 24.0,
-                                                      height: 24.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        shape: BoxShape.circle,
-                                                      ),
-                                                    ),
-                                                  ].divide(
-                                                      const SizedBox(height: 16.0)),
-                                                ),
-                                              ].divide(const SizedBox(height: 60.0)),
+                                            wrapWithModel(
+                                              model: _model
+                                                  .newNoteSelectorComponentModel,
+                                              updateCallback: () =>
+                                                  setState(() {}),
+                                              child:
+                                                  const NewNoteSelectorComponentWidget(),
                                             ),
                                           ]
                                               .divide(const SizedBox(height: 60.0))
