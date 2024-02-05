@@ -6,42 +6,48 @@ import 'package:flutter/material.dart';
 
 class NewNoteSelectorComponentModel
     extends FlutterFlowModel<NewNoteSelectorComponentWidget> {
+  ///  Local state fields for this component.
+
+  bool isNewNoteDotsVisible = false;
+
   ///  State fields for stateful widgets in this component.
 
-  // Model for noteDotComponent component.
-  late NoteDotComponentModel noteDotComponentModel1;
-  // Model for noteDotComponent component.
-  late NoteDotComponentModel noteDotComponentModel2;
-  // Model for noteDotComponent component.
-  late NoteDotComponentModel noteDotComponentModel3;
-  // Model for noteDotComponent component.
-  late NoteDotComponentModel noteDotComponentModel4;
-  // Model for noteDotComponent component.
-  late NoteDotComponentModel noteDotComponentModel5;
+  // State field(s) for MouseRegion widget.
+  bool mouseRegionHovered = false;
+  // Model for noteDot1Component.
+  late NoteDotComponentModel noteDot1ComponentModel;
+  // Model for noteDot2Component.
+  late NoteDotComponentModel noteDot2ComponentModel;
+  // Model for noteDot3Component.
+  late NoteDotComponentModel noteDot3ComponentModel;
+  // Model for noteDot4Component.
+  late NoteDotComponentModel noteDot4ComponentModel;
+  // Model for noteDot5Component.
+  late NoteDotComponentModel noteDot5ComponentModel;
 
   /// Initialization and disposal methods.
 
   @override
   void initState(BuildContext context) {
-    noteDotComponentModel1 =
+    noteDot1ComponentModel =
         createModel(context, () => NoteDotComponentModel());
-    noteDotComponentModel2 =
+    noteDot2ComponentModel =
         createModel(context, () => NoteDotComponentModel());
-    noteDotComponentModel3 =
+    noteDot3ComponentModel =
         createModel(context, () => NoteDotComponentModel());
-    noteDotComponentModel4 =
+    noteDot4ComponentModel =
         createModel(context, () => NoteDotComponentModel());
-    noteDotComponentModel5 =
+    noteDot5ComponentModel =
         createModel(context, () => NoteDotComponentModel());
   }
 
   @override
   void dispose() {
-    noteDotComponentModel1.dispose();
-    noteDotComponentModel2.dispose();
-    noteDotComponentModel3.dispose();
-    noteDotComponentModel4.dispose();
-    noteDotComponentModel5.dispose();
+    noteDot1ComponentModel.dispose();
+    noteDot2ComponentModel.dispose();
+    noteDot3ComponentModel.dispose();
+    noteDot4ComponentModel.dispose();
+    noteDot5ComponentModel.dispose();
   }
 
   /// Action blocks are added here.

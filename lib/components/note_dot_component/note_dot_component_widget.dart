@@ -43,12 +43,22 @@ class _NoteDotComponentWidgetState extends State<NoteDotComponentWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 24.0,
-      height: 24.0,
-      decoration: BoxDecoration(
-        color: widget.colour,
-        shape: BoxShape.circle,
+    return MouseRegion(
+      opaque: false,
+      cursor: MouseCursor.defer ?? MouseCursor.defer,
+      onEnter: ((event) async {
+        setState(() => _model.mouseRegionHovered = true);
+      }),
+      onExit: ((event) async {
+        setState(() => _model.mouseRegionHovered = false);
+      }),
+      child: Container(
+        width: 24.0,
+        height: 24.0,
+        decoration: BoxDecoration(
+          color: widget.colour,
+          shape: BoxShape.circle,
+        ),
       ),
     );
   }
