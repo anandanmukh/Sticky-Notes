@@ -1,8 +1,11 @@
 import '/components/new_note_selector_component/new_note_selector_component_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -58,7 +61,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             children: [
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(60.0, 0.0, 60.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(60.0, 0.0, 60.0, 0.0),
                   child: Container(
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -74,13 +77,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             children: [
                               Container(
                                 width: 140.0,
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Expanded(
                                       child: Container(
-                                        decoration: const BoxDecoration(),
+                                        decoration: BoxDecoration(),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -96,13 +99,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               updateCallback: () =>
                                                   setState(() {}),
                                               child:
-                                                  const NewNoteSelectorComponentWidget(),
+                                                  NewNoteSelectorComponentWidget(),
                                             ),
                                           ]
-                                              .divide(const SizedBox(height: 60.0))
+                                              .divide(SizedBox(height: 60.0))
                                               .addToStart(
-                                                  const SizedBox(height: 32.0))
-                                              .addToEnd(const SizedBox(height: 32.0)),
+                                                  SizedBox(height: 32.0))
+                                              .addToEnd(SizedBox(height: 32.0)),
                                         ),
                                       ),
                                     ),
@@ -117,7 +120,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     Container(
                                       width: 100.0,
                                       height: 70.0,
-                                      decoration: const BoxDecoration(),
+                                      decoration: BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -149,7 +152,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       shape: BoxShape.circle,
                                                     ),
                                                   ),
-                                                ].divide(const SizedBox(height: 8.0)),
+                                                ].divide(SizedBox(height: 8.0)),
                                               ),
                                               Column(
                                                 mainAxisSize: MainAxisSize.max,
@@ -172,7 +175,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       shape: BoxShape.circle,
                                                     ),
                                                   ),
-                                                ].divide(const SizedBox(height: 8.0)),
+                                                ].divide(SizedBox(height: 8.0)),
                                               ),
                                             ],
                                           ),
@@ -190,14 +193,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               ),
                               Expanded(
                                 child: Container(
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             32.0, 0.0, 32.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -212,8 +215,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ),
                                       ),
                                     ]
-                                        .addToStart(const SizedBox(height: 120.0))
-                                        .addToEnd(const SizedBox(height: 32.0)),
+                                        .addToStart(SizedBox(height: 120.0))
+                                        .addToEnd(SizedBox(height: 32.0)),
                                   ),
                                 ),
                               ),
@@ -226,8 +229,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
             ]
-                .addToStart(const SizedBox(height: 60.0))
-                .addToEnd(const SizedBox(height: 60.0)),
+                .addToStart(SizedBox(height: 60.0))
+                .addToEnd(SizedBox(height: 60.0)),
           ),
         ),
       ),

@@ -1,5 +1,9 @@
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'note_dot_component_model.dart';
 export 'note_dot_component_model.dart';
 
@@ -8,7 +12,7 @@ class NoteDotComponentWidget extends StatefulWidget {
     super.key,
     Color? colour,
     required this.onCircleTapAction,
-  }) : colour = colour ?? const Color(0xFFEE684A);
+  }) : this.colour = colour ?? const Color(0xFFEE684A);
 
   final Color colour;
   final Future Function()? onCircleTapAction;
@@ -46,12 +50,6 @@ class _NoteDotComponentWidgetState extends State<NoteDotComponentWidget> {
     return MouseRegion(
       opaque: false,
       cursor: MouseCursor.defer ?? MouseCursor.defer,
-      onEnter: ((event) async {
-        setState(() => _model.mouseRegionHovered = true);
-      }),
-      onExit: ((event) async {
-        setState(() => _model.mouseRegionHovered = false);
-      }),
       child: Container(
         width: 24.0,
         height: 24.0,
@@ -60,6 +58,12 @@ class _NoteDotComponentWidgetState extends State<NoteDotComponentWidget> {
           shape: BoxShape.circle,
         ),
       ),
+      onEnter: ((event) async {
+        setState(() => _model.mouseRegionHovered = true);
+      }),
+      onExit: ((event) async {
+        setState(() => _model.mouseRegionHovered = false);
+      }),
     );
   }
 }

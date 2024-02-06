@@ -4,7 +4,11 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'new_note_selector_component_model.dart';
 export 'new_note_selector_component_model.dart';
 
@@ -30,8 +34,8 @@ class _NewNoteSelectorComponentWidgetState
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: const Offset(1.0, 1.0),
-          end: const Offset(1.1, 1.1),
+          begin: Offset(1.0, 1.0),
+          end: Offset(1.1, 1.1),
         ),
       ],
     ),
@@ -50,8 +54,8 @@ class _NewNoteSelectorComponentWidgetState
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 200.ms,
-          begin: const Offset(0.0, -60.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, -60.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -70,8 +74,8 @@ class _NewNoteSelectorComponentWidgetState
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 100.ms,
-          begin: const Offset(0.0, -40.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, -40.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -90,8 +94,8 @@ class _NewNoteSelectorComponentWidgetState
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 100.ms,
-          begin: const Offset(0.0, -60.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, -60.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -110,8 +114,8 @@ class _NewNoteSelectorComponentWidgetState
           curve: Curves.easeInOut,
           delay: 400.ms,
           duration: 100.ms,
-          begin: const Offset(0.0, -60.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, -60.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -130,8 +134,8 @@ class _NewNoteSelectorComponentWidgetState
           curve: Curves.easeInOut,
           delay: 500.ms,
           duration: 100.ms,
-          begin: const Offset(0.0, -60.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, -60.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -173,22 +177,6 @@ class _NewNoteSelectorComponentWidgetState
         MouseRegion(
           opaque: false,
           cursor: MouseCursor.defer ?? MouseCursor.defer,
-          onEnter: ((event) async {
-            setState(() => _model.mouseRegionHovered = true);
-            if (animationsMap['iconButtonOnActionTriggerAnimation'] != null) {
-              await animationsMap['iconButtonOnActionTriggerAnimation']!
-                  .controller
-                  .forward(from: 0.0);
-            }
-          }),
-          onExit: ((event) async {
-            setState(() => _model.mouseRegionHovered = false);
-            if (animationsMap['iconButtonOnActionTriggerAnimation'] != null) {
-              await animationsMap['iconButtonOnActionTriggerAnimation']!
-                  .controller
-                  .reverse();
-            }
-          }),
           child: FlutterFlowIconButton(
             borderRadius: 22.0,
             buttonSize: 44.0,
@@ -282,6 +270,22 @@ class _NewNoteSelectorComponentWidgetState
           ).animateOnActionTrigger(
             animationsMap['iconButtonOnActionTriggerAnimation']!,
           ),
+          onEnter: ((event) async {
+            setState(() => _model.mouseRegionHovered = true);
+            if (animationsMap['iconButtonOnActionTriggerAnimation'] != null) {
+              await animationsMap['iconButtonOnActionTriggerAnimation']!
+                  .controller
+                  .forward(from: 0.0);
+            }
+          }),
+          onExit: ((event) async {
+            setState(() => _model.mouseRegionHovered = false);
+            if (animationsMap['iconButtonOnActionTriggerAnimation'] != null) {
+              await animationsMap['iconButtonOnActionTriggerAnimation']!
+                  .controller
+                  .reverse();
+            }
+          }),
         ),
         Column(
           mainAxisSize: MainAxisSize.max,
@@ -336,9 +340,9 @@ class _NewNoteSelectorComponentWidgetState
             ).animateOnActionTrigger(
               animationsMap['noteDotComponentOnActionTriggerAnimation5']!,
             ),
-          ].divide(const SizedBox(height: 16.0)),
+          ].divide(SizedBox(height: 16.0)),
         ),
-      ].divide(const SizedBox(height: 60.0)),
+      ].divide(SizedBox(height: 60.0)),
     );
   }
 }
