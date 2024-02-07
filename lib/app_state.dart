@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/backend/schema/structs/index.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -20,6 +21,21 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _isDarkMode = prefs.getBool('ff_isDarkMode') ?? _isDarkMode;
     });
+    _safeInit(() {
+      _notes = prefs
+              .getStringList('ff_notes')
+              ?.map((x) {
+                try {
+                  return NoteStruct.fromSerializableMap(jsonDecode(x));
+                } catch (e) {
+                  print("Can't decode persisted data type. Error: $e.");
+                  return null;
+                }
+              })
+              .withoutNulls
+              .toList() ??
+          _notes;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -34,6 +50,41 @@ class FFAppState extends ChangeNotifier {
   set isDarkMode(bool value) {
     _isDarkMode = value;
     prefs.setBool('ff_isDarkMode', value);
+  }
+
+  List<NoteStruct> _notes = [];
+  List<NoteStruct> get notes => _notes;
+  set notes(List<NoteStruct> value) {
+    _notes = value;
+    prefs.setStringList('ff_notes', value.map((x) => x.serialize()).toList());
+  }
+
+  void addToNotes(NoteStruct value) {
+    _notes.add(value);
+    prefs.setStringList('ff_notes', _notes.map((x) => x.serialize()).toList());
+  }
+
+  void removeFromNotes(NoteStruct value) {
+    _notes.remove(value);
+    prefs.setStringList('ff_notes', _notes.map((x) => x.serialize()).toList());
+  }
+
+  void removeAtIndexFromNotes(int index) {
+    _notes.removeAt(index);
+    prefs.setStringList('ff_notes', _notes.map((x) => x.serialize()).toList());
+  }
+
+  void updateNotesAtIndex(
+    int index,
+    NoteStruct Function(NoteStruct) updateFn,
+  ) {
+    _notes[index] = updateFn(_notes[index]);
+    prefs.setStringList('ff_notes', _notes.map((x) => x.serialize()).toList());
+  }
+
+  void insertAtIndexInNotes(int index, NoteStruct value) {
+    _notes.insert(index, value);
+    prefs.setStringList('ff_notes', _notes.map((x) => x.serialize()).toList());
   }
 }
 

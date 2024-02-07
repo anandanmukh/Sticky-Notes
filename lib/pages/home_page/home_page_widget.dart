@@ -375,6 +375,89 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           ],
                                         ),
                                       ),
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Builder(
+                                            builder: (context) {
+                                              if (FFAppState().notes.isNotEmpty) {
+                                                return const Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Wrap(
+                                                      spacing: 0.0,
+                                                      runSpacing: 0.0,
+                                                      alignment:
+                                                          WrapAlignment.start,
+                                                      crossAxisAlignment:
+                                                          WrapCrossAlignment
+                                                              .start,
+                                                      direction:
+                                                          Axis.horizontal,
+                                                      runAlignment:
+                                                          WrapAlignment.start,
+                                                      verticalDirection:
+                                                          VerticalDirection
+                                                              .down,
+                                                      clipBehavior: Clip.none,
+                                                      children: [],
+                                                    ),
+                                                  ],
+                                                );
+                                              } else {
+                                                return Container(
+                                                  width: double.infinity,
+                                                  height: 400.0,
+                                                  decoration: const BoxDecoration(),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Icon(
+                                                        Icons
+                                                            .edit_note_outlined,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        size: 72.0,
+                                                      ),
+                                                      Text(
+                                                        'Empty Notes',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Noto Sans',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                      ),
+                                                      Text(
+                                                        'Create Your First Note By hitting the + Button',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                );
+                                              }
+                                            },
+                                          ),
+                                        ],
+                                      ),
                                     ]
                                         .addToStart(const SizedBox(height: 120.0))
                                         .addToEnd(const SizedBox(height: 32.0)),
