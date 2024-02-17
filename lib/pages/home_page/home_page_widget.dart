@@ -1,4 +1,5 @@
 import '/components/new_note_selector_component/new_note_selector_component_widget.dart';
+import '/components/note_component/note_component_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -362,7 +363,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     children: [
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            32.0, 0.0, 32.0, 0.0),
+                                            60.0, 0.0, 60.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -381,29 +382,65 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           Builder(
                                             builder: (context) {
                                               if (FFAppState().notes.isNotEmpty) {
-                                                return const Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Wrap(
-                                                      spacing: 0.0,
-                                                      runSpacing: 0.0,
-                                                      alignment:
-                                                          WrapAlignment.start,
-                                                      crossAxisAlignment:
-                                                          WrapCrossAlignment
-                                                              .start,
-                                                      direction:
-                                                          Axis.horizontal,
-                                                      runAlignment:
-                                                          WrapAlignment.start,
-                                                      verticalDirection:
-                                                          VerticalDirection
-                                                              .down,
-                                                      clipBehavior: Clip.none,
-                                                      children: [],
-                                                    ),
-                                                  ],
+                                                return Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          60.0, 0.0, 60.0, 0.0),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      Builder(
+                                                        builder: (context) {
+                                                          final note =
+                                                              FFAppState()
+                                                                  .notes
+                                                                  .toList();
+                                                          return Wrap(
+                                                            spacing: 0.0,
+                                                            runSpacing: 0.0,
+                                                            alignment:
+                                                                WrapAlignment
+                                                                    .start,
+                                                            crossAxisAlignment:
+                                                                WrapCrossAlignment
+                                                                    .start,
+                                                            direction:
+                                                                Axis.horizontal,
+                                                            runAlignment:
+                                                                WrapAlignment
+                                                                    .start,
+                                                            verticalDirection:
+                                                                VerticalDirection
+                                                                    .down,
+                                                            clipBehavior:
+                                                                Clip.none,
+                                                            children:
+                                                                List.generate(
+                                                                    note.length,
+                                                                    (noteIndex) {
+                                                              final noteItem =
+                                                                  note[
+                                                                      noteIndex];
+                                                              return NoteComponentWidget(
+                                                                key: Key(
+                                                                    'Key1ss_${noteIndex}_of_${note.length}'),
+                                                                index:
+                                                                    noteIndex,
+                                                                note: noteItem,
+                                                                onDeleteAction:
+                                                                    () async {},
+                                                                onUpdateAction:
+                                                                    () async {},
+                                                              );
+                                                            }),
+                                                          );
+                                                        },
+                                                      ),
+                                                    ],
+                                                  ),
                                                 );
                                               } else {
                                                 return Container(
@@ -459,6 +496,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         ],
                                       ),
                                     ]
+                                        .divide(const SizedBox(height: 60.0))
                                         .addToStart(const SizedBox(height: 120.0))
                                         .addToEnd(const SizedBox(height: 32.0)),
                                   ),

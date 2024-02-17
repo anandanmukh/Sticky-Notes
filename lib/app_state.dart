@@ -52,7 +52,10 @@ class FFAppState extends ChangeNotifier {
     prefs.setBool('ff_isDarkMode', value);
   }
 
-  List<NoteStruct> _notes = [];
+  List<NoteStruct> _notes = [
+    NoteStruct.fromSerializableMap(jsonDecode(
+        '{"Description":"Test Sticky Note","Colour":"#0000","CreateDate":"1708150337667","IsNew":"false"}'))
+  ];
   List<NoteStruct> get notes => _notes;
   set notes(List<NoteStruct> value) {
     _notes = value;
@@ -86,16 +89,6 @@ class FFAppState extends ChangeNotifier {
     _notes.insert(index, value);
     prefs.setStringList('ff_notes', _notes.map((x) => x.serialize()).toList());
   }
-}
-
-LatLng? _latLngFromString(String? val) {
-  if (val == null) {
-    return null;
-  }
-  final split = val.split(',');
-  final lat = double.parse(split.first);
-  final lng = double.parse(split.last);
-  return LatLng(lat, lng);
 }
 
 void _safeInit(Function() initializeField) {
