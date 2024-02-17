@@ -1173,8 +1173,13 @@ file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/.dart_t
 file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/.dart_tool/flutter_build/cc299103c04a75854d1b9fd4b2ae2a8b/web_plugin_registrant.dart
 file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/app_constants.dart
 file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/app_state.dart
+file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/backend/schema/structs/index.dart
+file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/backend/schema/structs/note_struct.dart
+file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/backend/schema/util/schema_util.dart
 file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/components/new_note_selector_component/new_note_selector_component_model.dart
 file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/components/new_note_selector_component/new_note_selector_component_widget.dart
+file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/components/note_component/note_component_model.dart
+file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/components/note_component/note_component_widget.dart
 file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/components/note_dot_component/note_dot_component_model.dart
 file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/components/note_dot_component/note_dot_component_widget.dart
 file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/flutter_flow/flutter_flow_animations.dart
@@ -1182,7 +1187,6 @@ file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/flu
 file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/flutter_flow/flutter_flow_model.dart
 file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/flutter_flow/flutter_flow_theme.dart
 file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/flutter_flow/flutter_flow_util.dart
-file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/flutter_flow/internationalization.dart
 file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/flutter_flow/lat_lng.dart
 file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/flutter_flow/nav/nav.dart
 file:///Users/slow-cheetah/Documents/GitHub/anandanmukh_own/Sticky-Notes/lib/flutter_flow/nav/serialization_util.dart
