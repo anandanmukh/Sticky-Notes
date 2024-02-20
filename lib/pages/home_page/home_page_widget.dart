@@ -183,7 +183,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               updateCallback: () =>
                                                   setState(() {}),
                                               child:
-                                                  const NewNoteSelectorComponentWidget(),
+                                                  NewNoteSelectorComponentWidget(
+                                                onAddNoteAction: () async {
+                                                  setState(() {});
+                                                },
+                                              ),
                                             ),
                                           ]
                                               .divide(const SizedBox(height: 60.0))

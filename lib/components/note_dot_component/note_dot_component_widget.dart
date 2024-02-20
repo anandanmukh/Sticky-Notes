@@ -55,12 +55,21 @@ class _NoteDotComponentWidgetState extends State<NoteDotComponentWidget> {
       onExit: ((event) async {
         setState(() => _model.mouseRegionHovered = false);
       }),
-      child: Container(
-        width: 24.0,
-        height: 24.0,
-        decoration: BoxDecoration(
-          color: widget.colour,
-          shape: BoxShape.circle,
+      child: InkWell(
+        splashColor: Colors.transparent,
+        focusColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        onTap: () async {
+          await widget.onCircleTapAction?.call();
+        },
+        child: Container(
+          width: 24.0,
+          height: 24.0,
+          decoration: BoxDecoration(
+            color: widget.colour,
+            shape: BoxShape.circle,
+          ),
         ),
       ),
     );

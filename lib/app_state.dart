@@ -52,10 +52,7 @@ class FFAppState extends ChangeNotifier {
     prefs.setBool('ff_isDarkMode', value);
   }
 
-  List<NoteStruct> _notes = [
-    NoteStruct.fromSerializableMap(jsonDecode(
-        '{"Description":"Test Sticky Note","Colour":"#0000","CreateDate":"1708150337667","IsNew":"false"}'))
-  ];
+  List<NoteStruct> _notes = [];
   List<NoteStruct> get notes => _notes;
   set notes(List<NoteStruct> value) {
     _notes = value;

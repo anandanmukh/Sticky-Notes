@@ -1,3 +1,4 @@
+import '/backend/schema/structs/index.dart';
 import '/components/note_dot_component/note_dot_component_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -10,7 +11,12 @@ import 'new_note_selector_component_model.dart';
 export 'new_note_selector_component_model.dart';
 
 class NewNoteSelectorComponentWidget extends StatefulWidget {
-  const NewNoteSelectorComponentWidget({super.key});
+  const NewNoteSelectorComponentWidget({
+    super.key,
+    this.onAddNoteAction,
+  });
+
+  final Future Function()? onAddNoteAction;
 
   @override
   State<NewNoteSelectorComponentWidget> createState() =>
@@ -294,7 +300,57 @@ class _NewNoteSelectorComponentWidgetState
               updateCallback: () => setState(() {}),
               child: NoteDotComponentWidget(
                 colour: FFAppConstants.NOTECOLOR1,
-                onCircleTapAction: () async {},
+                onCircleTapAction: () async {
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation5'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation5']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation4'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation4']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation3'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation3']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation2'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation2']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation1'] !=
+                      null) {
+                    await animationsMap[
+                            'noteDotComponentOnActionTriggerAnimation1']!
+                        .controller
+                        .reverse();
+                  }
+                  setState(() {
+                    _model.isNewNoteDotsVisible = !_model.isNewNoteDotsVisible;
+                  });
+                  setState(() {
+                    FFAppState().insertAtIndexInNotes(
+                        0,
+                        NoteStruct(
+                          isNew: true,
+                          colour: FFAppConstants.NOTECOLOR1,
+                          createDate: getCurrentTimestamp,
+                        ));
+                  });
+                  await widget.onAddNoteAction?.call();
+                },
               ),
             ).animateOnActionTrigger(
               animationsMap['noteDotComponentOnActionTriggerAnimation1']!,
@@ -304,7 +360,57 @@ class _NewNoteSelectorComponentWidgetState
               updateCallback: () => setState(() {}),
               child: NoteDotComponentWidget(
                 colour: FFAppConstants.NOTECOLOR2,
-                onCircleTapAction: () async {},
+                onCircleTapAction: () async {
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation5'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation5']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation4'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation4']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation3'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation3']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation2'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation2']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation1'] !=
+                      null) {
+                    await animationsMap[
+                            'noteDotComponentOnActionTriggerAnimation1']!
+                        .controller
+                        .reverse();
+                  }
+                  setState(() {
+                    _model.isNewNoteDotsVisible = !_model.isNewNoteDotsVisible;
+                  });
+                  setState(() {
+                    FFAppState().insertAtIndexInNotes(
+                        0,
+                        NoteStruct(
+                          isNew: true,
+                          colour: FFAppConstants.NOTECOLOR2,
+                          createDate: getCurrentTimestamp,
+                        ));
+                  });
+                  await widget.onAddNoteAction?.call();
+                },
               ),
             ).animateOnActionTrigger(
               animationsMap['noteDotComponentOnActionTriggerAnimation2']!,
@@ -314,7 +420,57 @@ class _NewNoteSelectorComponentWidgetState
               updateCallback: () => setState(() {}),
               child: NoteDotComponentWidget(
                 colour: FFAppConstants.NOTECOLOR3,
-                onCircleTapAction: () async {},
+                onCircleTapAction: () async {
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation5'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation5']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation4'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation4']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation3'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation3']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation2'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation2']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation1'] !=
+                      null) {
+                    await animationsMap[
+                            'noteDotComponentOnActionTriggerAnimation1']!
+                        .controller
+                        .reverse();
+                  }
+                  setState(() {
+                    _model.isNewNoteDotsVisible = !_model.isNewNoteDotsVisible;
+                  });
+                  setState(() {
+                    FFAppState().insertAtIndexInNotes(
+                        0,
+                        NoteStruct(
+                          isNew: true,
+                          colour: FFAppConstants.NOTECOLOR3,
+                          createDate: getCurrentTimestamp,
+                        ));
+                  });
+                  await widget.onAddNoteAction?.call();
+                },
               ),
             ).animateOnActionTrigger(
               animationsMap['noteDotComponentOnActionTriggerAnimation3']!,
@@ -324,7 +480,57 @@ class _NewNoteSelectorComponentWidgetState
               updateCallback: () => setState(() {}),
               child: NoteDotComponentWidget(
                 colour: FFAppConstants.NOTECOLOR4,
-                onCircleTapAction: () async {},
+                onCircleTapAction: () async {
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation5'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation5']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation4'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation4']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation3'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation3']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation2'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation2']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation1'] !=
+                      null) {
+                    await animationsMap[
+                            'noteDotComponentOnActionTriggerAnimation1']!
+                        .controller
+                        .reverse();
+                  }
+                  setState(() {
+                    _model.isNewNoteDotsVisible = !_model.isNewNoteDotsVisible;
+                  });
+                  setState(() {
+                    FFAppState().insertAtIndexInNotes(
+                        0,
+                        NoteStruct(
+                          isNew: true,
+                          colour: FFAppConstants.NOTECOLOR4,
+                          createDate: getCurrentTimestamp,
+                        ));
+                  });
+                  await widget.onAddNoteAction?.call();
+                },
               ),
             ).animateOnActionTrigger(
               animationsMap['noteDotComponentOnActionTriggerAnimation4']!,
@@ -334,7 +540,57 @@ class _NewNoteSelectorComponentWidgetState
               updateCallback: () => setState(() {}),
               child: NoteDotComponentWidget(
                 colour: FFAppConstants.NOTECOLOR5,
-                onCircleTapAction: () async {},
+                onCircleTapAction: () async {
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation5'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation5']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation4'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation4']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation3'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation3']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation2'] !=
+                      null) {
+                    animationsMap['noteDotComponentOnActionTriggerAnimation2']!
+                        .controller
+                        .reverse();
+                  }
+                  if (animationsMap[
+                          'noteDotComponentOnActionTriggerAnimation1'] !=
+                      null) {
+                    await animationsMap[
+                            'noteDotComponentOnActionTriggerAnimation1']!
+                        .controller
+                        .reverse();
+                  }
+                  setState(() {
+                    _model.isNewNoteDotsVisible = !_model.isNewNoteDotsVisible;
+                  });
+                  setState(() {
+                    FFAppState().insertAtIndexInNotes(
+                        0,
+                        NoteStruct(
+                          isNew: true,
+                          colour: FFAppConstants.NOTECOLOR5,
+                          createDate: getCurrentTimestamp,
+                        ));
+                  });
+                  await widget.onAddNoteAction?.call();
+                },
               ),
             ).animateOnActionTrigger(
               animationsMap['noteDotComponentOnActionTriggerAnimation5']!,

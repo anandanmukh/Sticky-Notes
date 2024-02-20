@@ -56,7 +56,7 @@ class _NoteComponentWidgetState extends State<NoteComponentWidget> {
       width: 240.0,
       height: 200.0,
       decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).primary,
+        color: widget.note?.colour,
         borderRadius: BorderRadius.circular(16.0),
       ),
       child: Column(
