@@ -403,8 +403,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   .notes
                                                                   .toList();
                                                           return Wrap(
-                                                            spacing: 0.0,
-                                                            runSpacing: 0.0,
+                                                            spacing: 32.0,
+                                                            runSpacing: 32.0,
                                                             alignment:
                                                                 WrapAlignment
                                                                     .start,
@@ -415,7 +415,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                 Axis.horizontal,
                                                             runAlignment:
                                                                 WrapAlignment
-                                                                    .start,
+                                                                    .spaceEvenly,
                                                             verticalDirection:
                                                                 VerticalDirection
                                                                     .down,
